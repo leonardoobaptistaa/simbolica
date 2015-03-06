@@ -44,6 +44,26 @@ Remember: You have to put the same FOLDER_NAME on parse new command and folder_n
 And it's done, now your app will be symbolicated automatically on Parse Crash
 Analytics.
 
+Start server on login
+---------------------
+
+Probally you will need to start the server when the machine boots.
+To do this, you can generate start up scrips from foreman export tool.
+
+###Ubuntu (using upstart)
+
+```
+foreman export upstart /etc/init -a simbolica -u <your-login-user>
+sudo start silvio
+```
+
+If you installed Ruby using RVM, probally you will need the rvmsudo command:
+
+```
+rvmsudo foreman export upstart /etc/init -a simbolica -u <your-login-user>
+sudo start silvio
+```
+
 How to contribute
 -----------------
 
