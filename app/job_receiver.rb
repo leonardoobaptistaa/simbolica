@@ -14,7 +14,7 @@ post '/job_receiver/from/:downloader/to/:uploader' do
   @logger.info("Dsym avaiable at: #{dsym_file_path}")
 
   uploader = Uploader::Chooser.choose_by(params[:uploader])
-  uploader.app_folder = params[:app_folder]
+  uploader.app_folder = params[:folder_name]
   status = uploader.upload dsym_file_path
   @logger.info("Upload Status from #{uploader.name}\n#{status}")
 
