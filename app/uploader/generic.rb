@@ -1,5 +1,6 @@
 module Uploader
   class Generic
-    attr_accessor :app_folder
+    def configure params
+    end
   end
 end
