@@ -4,7 +4,8 @@ module Uploader
 
     def upload dsym_path
       url = URI.parse(URI.encode(@job_build_url.strip))
-      url.query = "delay=0sec"
+      url.query = "" if url.query.nil?
+      url.query << "delay=0sec"
       url.query << "&dsym_url=#{dsym_path}"
       HTTParty.post(url)
     end
