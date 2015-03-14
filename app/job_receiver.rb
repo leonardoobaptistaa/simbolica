@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'logger'
+require 'dotenv'
+Dotenv.load
 
 require_relative 'downloader'
 require_relative 'uploader'

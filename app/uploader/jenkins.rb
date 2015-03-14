@@ -11,6 +11,9 @@ module Uploader
       end
       url.query << "&dsym_url=#{dsym_path}"
       HTTParty.post(url)
+
+      auth = {username: ENV['JENKINS_LOGIN'], password: ENV['JENKINS_TOKEN']}
+      HTTParty.post(url, basic_auth: auth)
     end
 
     def configure params
